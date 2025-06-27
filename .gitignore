@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+.env/
+.venv/
+animegen/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VS Code settings
+.vscode/
+
+# Log and runtime files
+*.log
+*.out
+
+# OS metadata
+.DS_Store
+
+# Model files / large data
+*.h5
+*.pkl
+*.ckpt
+*.pt
+*.npz
+*.npy
+
+# Jupyter runtime
+~$*
+
+# Python dependency files
+pip-log.txt
