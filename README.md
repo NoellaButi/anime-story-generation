@@ -113,8 +113,6 @@ Recommended to run on Google Colab or a GPU-enabled environment
 
 ## Files
 
-- Final_Report.pdf – Full technical report with evaluation tables and model details
-- Final_Presentation.pdf – Summary slides with visuals
 - models/ – All models tested and tuned
 - plot_creation/ – Graph notebooks for final comparisons
 - cleaning_and_eda/ – Dataset cleaning and EDA
