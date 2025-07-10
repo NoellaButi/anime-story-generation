@@ -121,5 +121,7 @@ Recommended to run on Google Colab or a GPU-enabled environment
 - input_output_pair_creation/ – Prompt-synopsis pairing logic
 
 ## Contact
+
 Noella Buti – noellabuti@gmail.com
+
 Yuki Rivera – yukiko.rivera@bellevuecollege.edu
