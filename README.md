@@ -26,7 +26,7 @@ The final optimized model (**BART**) produces the most coherent results, evaluat
 - Evaluated using quantitative + qualitative metrics  
 - Visualized comparisons and semantic projections with UMAP  
 
-# 📁 Repository Layout 
+## 📁 Repository Layout 
 ```bash
 models/                  # model runs (BART, GPT-2, T5, RNN, LSTM, Hybrid, Transformers)
 cleaning_and_eda/        # dataset cleaning & EDA
