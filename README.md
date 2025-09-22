@@ -76,6 +76,6 @@ open comparison_graph_creation.ipynb
 - Integrate Stable Diffusion for optional visual generation
 
 ## 📜 License
-MIT (see LICENSE)
+MIT (see [LICENSE](LICENSE))
 
 ---
