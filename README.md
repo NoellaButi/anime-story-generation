@@ -1,105 +1,65 @@
-# Anime Story Generation System
+# Anime Story Generation System 🎬✨  
+Deep learning pipeline to generate original **anime-style synopses** from structured prompts (genre, theme, demographic).  
 
-**CS495 Data Science Capstone – Spring 2025**  
-**Team Members:** Noella Buti & Yuki Rivera  
-**Institution:** Bellevue College – B.S. Computer Science (Data Science Emphasis)
-
----
-
-## Overview
-
-The Anime Story Generation System is a deep learning-based pipeline that generates original anime-style synopses from structured prompts (genre, theme, demographic). The project explores a variety of architectures and fine-tunes pre-trained models like BART, T5, and GPT-2 for conditional generation tasks.
+![Language](https://img.shields.io/badge/language-Python-blue.svg) 
+![Notebook](https://img.shields.io/badge/tool-Jupyter-orange.svg) 
+![Framework](https://img.shields.io/badge/framework-Transformers-black.svg) 
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)  
 
 ---
 
-## Objectives
+## ✨ Overview  
+This project was completed as part of the **CS495 Data Science Capstone (Spring 2025)** at Bellevue College.  
+It explores multiple architectures (LSTM, RNN, GPT-2, T5, BART, Transformers from scratch) for **conditional text generation**.  
 
-- Build and evaluate a variety of neural architectures for conditional text generation
-- Optimize the best-performing model (BART) based on:
-  - **Perplexity (PPL)** – fluency
-  - **Cosine Similarity (CS)** – semantic alignment
-  - **Manual Inspection (MI)** – human-rated relevance and coherence
-
----
-
-## Tech Stack
-
-- Python, JupyterLab, Google Colab Pro  
-- Hugging Face Transformers (GPT2, T5, BART)  
-- Keras/TensorFlow, PyTorch  
-- sentence-transformers, NumPy, pandas, matplotlib  
-- UMAP for semantic projection  
+The final optimized model (**BART**) produces the most coherent results, evaluated by:  
+- **Perplexity (PPL)** – fluency  
+- **Cosine Similarity (CS)** – semantic alignment  
+- **Manual Inspection (MI)** – human-rated relevance  
 
 ---
 
-## Models Directory
+## 🛠️ Workflow  
+- Cleaned and analyzed ~10,000 anime entries (genres, themes, demographics, titles)  
+- Generated prompt–synopsis pairs using structured templates  
+- Trained and compared multiple models (LSTM, Hybrid GRU, GPT-2, T5, BART)  
+- Evaluated using quantitative + qualitative metrics  
+- Visualized comparisons and semantic projections with UMAP  
 
-Located in `models/`:
+# 📁 Repository Layout 
+```bash
+models/                  # model runs (BART, GPT-2, T5, RNN, LSTM, Hybrid, Transformers)
+cleaning_and_eda/        # dataset cleaning & EDA
+input_output_pair_creation/ # prompt–synopsis templates
+plot_creation/           # evaluation plots & comparisons
+README.md
+```
 
-- `bart/` – Final model with best performance  
-- `basic_transformer_keras/` – Transformer from scratch (Keras)  
-- `basic_transformer_pytorch/` – Transformer from scratch (PyTorch)  
-- `gpt2/` – GPT-2 fine-tuning and evaluation  
-- `t5/` – T5-small and T5-base runs  
-- `lstm_1st_version/`, `lstm_2nd_version/` – Sequential LSTM models  
-- `rnn_1st_version/`, `rnn_2nd_version/` – RNN baselines  
-- `hybrid/` – GRU-RNN and GRU-LSTM combined models  
+## 📊 Results (BART – Optimized Trial 6)
 
----
+| Metric            | Value   |
+|-------------------|---------|
+| Accuracy (Manual Score) | 52 / 80 |
+| Perplexity (PPL)  | 47.53   |
+| Cosine Similarity | 0.293   |
 
-## Data Workflow
+Tuned decoding: `top_k=30`, `top_p=0.9`, `temperature=0.8`
 
-- Located in `cleaning_and_eda/`: Data cleaning, EDA, and demographic analysis  
-- Located in `input_output_pair_creation/`: Prompt-synopsis pair generation using templates  
+## 👥 Team Contributions
+This was a two-person group project.
 
-### Dataset
+**Project Lead – Yuki Rivera**
+- Feature engineering
+- Prompt–synopsis pair preparation
+- Built & evaluated: RNN, LSTM (2nd version), Basic Transformer, BART
 
-- **Top 15,000 Ranked Anime Dataset** (via Kaggle/MyAnimeList API)  
-- ~10,000 clean entries after preprocessing  
-- Used to create 15 prompt structures using genre, theme, demographic, title  
+**Team Member – Noëlla Buti**
+- Data analysis & visualization
+- Feature engineering and selection
+- Built & evaluated: LSTM (1st version), Hybrid (GRU/RNN, GRU/LSTM), T5, GPT-2
 
----
-
-## Final Results (BART – Optimized Trial 6)
-
-| Metric              | Value     |
-|---------------------|-----------|
-| Perplexity (PPL)    | 47.53     |
-| Cosine Similarity   | 0.293     |
-| Manual Score (MI)   | 52 / 80   |
-
-> Tuned decoding parameters: `top_k=30`, `top_p=0.9`, `temperature=0.8`
-
----
-
-## Plot & Evaluation Tools
-
-Located in `plot_creation/`:
-
-- `comparison_graph_creation.ipynb` – Model metric comparisons  
-- `testing_graphs.ipynb` – Final BART performance plots  
-
----
-
-## Team Contributions
-
-### Noella Buti  
-- Data cleaning & EDA (`cleaning_and_eda/`)  
-- Feature engineering and selection  
-- Built & evaluated: LSTM (v1), Hybrid, T5, GPT-2  
-- Implemented cosine similarity & perplexity metrics  
-- Report sections: Data Visualization, Feature Engineering  
-
-### Yuki Rivera  
-- Prompt-template generation (`input_output_pair_creation/`)  
-- Built & optimized: RNN (v2), Transformer, BART  
-- BART hyperparameter tuning and decoding refinement  
-- Final report writing, model comparison graphs, GitHub structure  
-
----
-
-## How to Run
-
+## ▶️ How to Run
+Run in Google Colab or any GPU-enabled environment.
 ```bash
 # Example: run BART training or evaluation
 cd models/bart/
@@ -109,17 +69,13 @@ open bart_final_training.ipynb
 cd plot_creation/
 open comparison_graph_creation.ipynb
 ```
-Recommended to run on Google Colab or a GPU-enabled environment
 
-## Files
+## 🔮 Roadmap
+- Experiment with larger pre-trained models (T5-Base, GPT-J)
+- Expand datasets with character traits for richer prompts
+- Integrate Stable Diffusion for optional visual generation
 
-- models/ – All models tested and tuned
-- plot_creation/ – Graph notebooks for final comparisons
-- cleaning_and_eda/ – Dataset cleaning and EDA
-- input_output_pair_creation/ – Prompt-synopsis pairing logic
+## 📜 License
+MIT (see LICENSE)
 
-## Contact
-
-Noella Buti – noellabuti@gmail.com
-
-Yuki Rivera – yukiko.rivera@bellevuecollege.edu
+---
