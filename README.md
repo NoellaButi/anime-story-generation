@@ -22,7 +22,7 @@ The final optimized model (**BART**) produces the most coherent results, evaluat
 ## 🛠️ Workflow  
 - Cleaned and analyzed ~10,000 anime entries (genres, themes, demographics, titles)  
 - Generated prompt–synopsis pairs using structured templates  
-- Trained and compared multiple models (LSTM, Hybrid GRU, GPT-2, T5, BART)  
+- Trained and compared multiple models (LSTM, Hybrid GRU, T5, GPT-2)  
 - Evaluated using quantitative + qualitative metrics  
 - Visualized comparisons and semantic projections with UMAP  
 
